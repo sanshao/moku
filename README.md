@@ -70,3 +70,42 @@ moku://notify?{sid:4,'nodeId':55}
     "code": "SUCCESS" 
 }
 ```
+
+# 前端调用接口列表
+
+需要moku-hybrid.js
+
+### 粘贴文本  
+```
+/**
+ * 将文字复制至粘贴版  
+ * @param [string] 需要粘贴的文本内容
+ * @callback [function] 客户端回调
+ */
+Moku.copyToClipboard(params, callback);
+```
+
+### 下载图片url至本地  
+```
+/**
+ * 下载图片url至本地  
+ * @param [string]|[array] 需要下载的图片url。当为1个图片时，可直接传一个url；当为多个时用数组传递
+ * @callback [function] 客户端回调
+ */
+Moku.downloadImages(params, callback);
+```
+
+### 下载图片url至本地  
+```
+/**
+ * 云库h5下拉刷新后需要通知客户端当前拿到的最大nodeId
+ * @param [object]   
+ * @param.nodeId [int] 当前拿到的最大nodeId
+ * @callback [function] 客户端回调  可缺省
+ */
+Moku.notify(params, callback);
+```
+
+
+
+
