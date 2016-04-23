@@ -95,7 +95,7 @@ Moku.copyToClipboard(params, callback);
 Moku.downloadImages(params, callback);
 ```
 
-### 下载图片url至本地  
+###  通知客户端云库页面拿到的最大nodeId    
 ```
 /**
  * 云库h5下拉刷新后需要通知客户端当前拿到的最大nodeId
