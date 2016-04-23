@@ -47,7 +47,7 @@ loadUrl('javascript:window.moku_123&&window.moku_123({"code":"SUCCESS","data":"x
 ### 跳转到客户端各个界面
 
 ```
- mokuapi://navigator?{'sid':3,'url':'xxx.xxx.xxx'}
+ moku://navigator?{'sid':3,'url':'xxx.xxx.xxx'}
  // 其中url为客户端界面指定的导航链接
 ```
 
@@ -58,5 +58,15 @@ loadUrl('javascript:window.moku_123&&window.moku_123({"code":"SUCCESS","data":"x
 }
 ```
 
-### 
+### 云库h5下拉刷新后需要通知客户端当前拿到的最大nodeId  
 
+```
+moku://notify?{sid:4,'nodeId':55}
+```
+
+回调给前端的参数
+```
+{
+    "code": "SUCCESS" 
+}
+```
