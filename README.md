@@ -33,7 +33,7 @@ loadUrl('javascript:window.mokuapi_123&&window.mokuapi_123({"code":"SUCCESS","da
 ### 保存图片至本地
 
 ```
- mokuapi://image.save:123/?{image:[url1,url2,url3]}
+ mokuapi://image.download:123/?{image:[url1,url2,url3]}
 ```
 
 回调给前端的参数
