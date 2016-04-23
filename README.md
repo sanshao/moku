@@ -3,7 +3,7 @@
 注册 mokuapi://协议进行h5与客户端的通讯
 
 完整的协议为组成
-mokuapi://[api的名字string型]:[当前会话id，int型]/?[传输给客户端的参数，JSONString，encode过，客户端拿到需要decode]
+moku://[api的名字string型]:[当前会话id，int型]/?[传输给客户端的参数，JSONString，encode过，客户端拿到需要decode]
 
 客户端截获上述规则的url后，不做跳转处理。并解析出相关参数做对应动作，处理完后通过给到前端回调：
 ```
@@ -19,7 +19,7 @@ loadUrl('javascript:window.mokuapi_123&&window.mokuapi_123({"code":"SUCCESS","da
 ### 复制文本到粘贴板
 
 ```
- mokuapi://clipboard.copy:123/?{text:'需要粘贴的文字'}
+ moku://clipboard.copy:123?{text:'需要粘贴的文字'}
 ```
 
 回调给前端的参数
@@ -33,7 +33,7 @@ loadUrl('javascript:window.mokuapi_123&&window.mokuapi_123({"code":"SUCCESS","da
 ### 保存图片至本地
 
 ```
- mokuapi://image.download:123/?{image:[url1,url2,url3]}
+ moku://image.download:123?{image:[url1,url2,url3]}
 ```
 
 回调给前端的参数
@@ -46,7 +46,7 @@ loadUrl('javascript:window.mokuapi_123&&window.mokuapi_123({"code":"SUCCESS","da
 ### 跳转到客户端各个界面
 
 ```
- mokuapi://navigator:123/?{url:'xxx.xxx.xxx'}
+ mokuapi://navigator:123?{url:'xxx.xxx.xxx'}
  // 其中url为客户端界面指定的导航链接
 ```
 
