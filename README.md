@@ -67,7 +67,7 @@ loadUrl('javascript:window.moku_123&&window.moku_123({"code":"SUCCESS","data":"x
 ### 云库h5下拉刷新后需要通知客户端当前拿到的最大nodeId  
 
 ```
-moku://notify?{sid:4,'nodeId':55}
+moku://feed.notify?{sid:4,'nodeId':55,'gid':0}
 ```
 
 回调给前端的参数
@@ -123,7 +123,7 @@ Moku.feedDownLoad(params, callback);
  * @param.nodeId [int] 当前拿到的最大nodeId
  * @callback [function] 客户端回调  可缺省
  */
-Moku.notify(params, callback);
+Moku.feedNotify(params, callback);
 ```
 
 
