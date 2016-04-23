@@ -44,6 +44,12 @@ loadUrl('javascript:window.moku_123&&window.moku_123({"code":"SUCCESS","data":"x
 }
 ```
 
+### 快捷下载：粘贴文本以及下载图片列表，并弹出结果界面
+```
+ moku://navigator.feed.download?{'sid':3,'text':'需要粘贴的文本','images':[url1,url2,url3]}
+ // 其中url为客户端界面指定的导航链接
+```
+
 ### 跳转到客户端各个界面
 
 ```
@@ -71,6 +77,7 @@ moku://notify?{sid:4,'nodeId':55}
 }
 ```
 
+
 # 前端调用接口列表
 
 需要moku-hybrid.js
@@ -95,7 +102,20 @@ Moku.copyToClipboard(params, callback);
 Moku.downloadImages(params, callback);
 ```
 
-###  通知客户端云库页面拿到的最大nodeId    
+###  云库下载界面    
+```
+/**
+ * 云库h5下拉刷新后需要通知客户端当前拿到的最大nodeId
+ * @param [object]   
+ * @param.text [string] 需要粘贴的文本
+ * @param.images [array] 需要保存至相册的图片url列表
+ * @callback [function] 客户端回调  可缺省
+ */
+Moku.feedDownLoad(params, callback);
+```
+
+###  通知客户端云库页面拿到的最大nodeId   
+
 ```
 /**
  * 云库h5下拉刷新后需要通知客户端当前拿到的最大nodeId
