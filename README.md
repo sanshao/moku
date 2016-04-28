@@ -17,6 +17,66 @@ loadUrl('javascript:window.moku_123&&window.moku_123({"code":"SUCCESS","data":"x
 
 ## 这里定义几个api
 
+###  批量查询模板信息
+```
+ moku://template.info?{'sid':1,'mids':[id1,id2,id3]}
+```
+回调给前端的参数
+```
+{
+    "code": "SUCCESS",
+    data: {
+      "id1":{
+          "download": 0 // 0表示未下载 1表示已经下载
+      },
+      "id2":{
+          "download": 1
+      } 
+    }
+}
+```
+
+
+### 下载模板
+```
+ moku://template.download?{'sid':1,'mid':'xxx'}
+```
+
+下载过程中需要执行事件通知前端, 
+其中n为事件名 下载模板事件为“template.download” 
+
+p为给到前端的JSON参数 如下载进度
+
+```
+{
+   "progress": 'xxx' // 具体字段与值由客户端定义 IOS和android必须一致
+}
+```
+
+```
+var w = window, v = w.Moku, d = w.document, e, n = '%@', p = '%@';
+if (v && v.fireEvent)
+    v.fireEvent(n, p);
+else {
+    if ( e = d.createEvent('HTMLEvents'), e.initEvent(n, !1, !0), p)
+        try {
+            e.param = JSON.parse(p)
+        } catch(x) {
+            e.param = {
+                "cdoe" : "PARAM_PARSE_ERROR"
+            }
+        }
+    d.dispatchEvent(e)
+}
+```
+
+### 去编辑模板
+```
+ moku://template.edit?{'sid':1,'mid':'xxx'}
+```
+
+
+
 ### 复制文本到粘贴板
 
 ```
